@@ -9,7 +9,7 @@ import {
   DeletedAt,
 } from 'sequelize-typescript';
 
-@Table({tableName: 'user', timestamps: true, paranoid: true})
+@Table({ timestamps: true, paranoid: true, freezeTableName: true })
 export class User extends Model {
   @Column({
     type: DataType.INTEGER,
@@ -17,7 +17,7 @@ export class User extends Model {
   })
   pid: number;
 
-  @Column({ 
+  @Column({
     type: DataType.INTEGER,
     allowNull: true,
   })

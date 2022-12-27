@@ -10,7 +10,7 @@ export const databaseProvider = [
     useFactory: async () => {
       const sequelize = new Sequelize({ dialect: 'postgres', ...database });
       sequelize.addModels([User]);
-      await sequelize.sync({alter: true});
+      await sequelize.sync({ alter: true });
       return sequelize;
     },
   },
