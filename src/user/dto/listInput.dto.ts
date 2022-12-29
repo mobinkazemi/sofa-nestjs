@@ -4,17 +4,11 @@ import {
   IsBoolean,
   IsOptional,
   IsNotEmpty,
+  IsEnum,
+  IsIn,
 } from 'class-validator';
 
 export class UserListInputDTO {
-  @IsOptional()
-  @IsString()
-  order: string;
-
-  @IsOptional()
-  @IsBoolean()
-  asc: boolean;
-
   @IsOptional()
   @IsString()
   firstName: string;
