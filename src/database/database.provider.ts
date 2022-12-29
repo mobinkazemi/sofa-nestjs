@@ -3,7 +3,6 @@ import constants from '../constants';
 import { User } from 'src/user/user.entity';
 import { Product } from 'src/product/product.entity';
 
-
 const { database } = constants;
 export const databaseProvider = [
   {
@@ -11,8 +10,9 @@ export const databaseProvider = [
     useFactory: async () => {
       const sequelize = new Sequelize({ dialect: 'postgres', ...database });
       sequelize.addModels([User, Product]);
-      await sequelize.sync({ alter: true });
+      //await sequelize.sync({ alter: true });
       return sequelize;
     },
   },
 ];
+ 
